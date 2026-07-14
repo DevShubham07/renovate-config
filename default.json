@@ -1,0 +1,31 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:recommended"],
+  "timezone": "Asia/Kolkata",
+  "schedule": ["before 6am on monday"],
+  "semanticCommits": "enabled",
+  "prHourlyLimit": 2,
+  "prConcurrentLimit": 5,
+  "packageRules": [
+    {
+      "description": "Group the Astro ecosystem's minor/patch updates into one PR",
+      "matchPackageNames": [
+        "astro",
+        "@astrojs/**",
+        "astro-favicons",
+        "tailwindcss",
+        "@tailwindcss/**"
+      ],
+      "matchUpdateTypes": ["minor", "patch"],
+      "groupName": "astro ecosystem (minor/patch)"
+    },
+    {
+      "description": "Automerge devDependencies patch updates once CI is green",
+      "matchDepTypes": ["devDependencies"],
+      "matchUpdateTypes": ["patch"],
+      "automerge": true,
+      "automergeType": "pr",
+      "platformAutomerge": true
+    }
+  ]
+}
