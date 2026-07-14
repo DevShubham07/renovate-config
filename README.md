@@ -9,7 +9,7 @@ Every `site-<slug>` (via `site-template`, §4.4) ships a `renovate.json` at its 
 
 ```json
 {
-  "extends": ["github>ORG/renovate-config"]
+  "extends": ["github>DevShubham07/renovate-config"]
 }
 ```
 
